@@ -1,0 +1,30 @@
+package kg.geeks.game.players;
+
+public class Witcher extends Hero {
+
+    public Witcher(int health, int damage, String name) {
+        super(health, damage, SuperAbility.REVIVE, name);
+    }
+
+    ;
+
+    @Override
+    public void applySuperPower(Boss boss, Hero[] heroes) {
+        for (int i = 0; i < heroes.length; i++) {
+
+        if(heroes[i]!=this&&heroes[i].getHealth()<=0){
+            heroes[i].setHealth(getHealth());
+            System.out.println("Witcher ressurects" +heroes[i].getName()+"with his own live");
+            setHealth(0);
+            break;
+
+
+
+                }
+
+            }
+        }
+    }
+
+
+
